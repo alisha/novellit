@@ -9,6 +9,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
+	public function lits() {
+		return $this->belongsToMany('Lit', 'library');
+	}
+
+	public function friends() {
+		return $this->belongsToMany('User', 'friends');
+	}
+
 	/**
 	 * The database table used by the model.
 	 *
