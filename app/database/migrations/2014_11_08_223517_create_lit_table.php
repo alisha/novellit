@@ -15,6 +15,8 @@ class CreateLitTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('author');
+			$table->text('description');
+			$table->string('link');
 			$table->timestamps();
 		});
 	}

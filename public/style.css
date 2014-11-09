@@ -1,0 +1,46 @@
+nav a:link {
+    color: #AB0600!important;
+}
+
+nav a:visited {
+    color: #AB0600!important;
+}
+
+h1 {
+    color: #AB0600;
+}
+
+a:link {
+    color: #0C8FF7;
+}
+
+a:visited {
+    color: #0C8FF7;
+}
+
+div .library {
+    
+    
+    margin: 5px;
+}
+
+div .library li {
+    margin-left: 15px;
+}
+
+div .content {
+    margin-top: 50px;
+}
+
+div #avatar {
+    margin-top: 20px;
+}
+
+div #avatar img {
+    width: 100px!important;
+    height: 100px!important;
+}
+
+p {
+    font-size: 120%;
+}

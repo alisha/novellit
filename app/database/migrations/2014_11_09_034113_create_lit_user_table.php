@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLibraryTable extends Migration {
+class CreateLitUserTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,14 +11,15 @@ class CreateLibraryTable extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::create('library', function($table) {
-			$table->increments('id');
+		Schema::create('lit_user', function($table) {
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->integer('lit_id')->unsigned();
 			$table->foreign('lit_id')->references('id')->on('lits');
 			$modes = array('currently_reading', 'to_read', 'have_read');
 			$table->enum('mode', $modes);
+			$table->date('started');
+			$table->date('finished');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +30,7 @@ class CreateLibraryTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::drop('library');
+		Schema::drop('lit_user');
 	}
 
 }
